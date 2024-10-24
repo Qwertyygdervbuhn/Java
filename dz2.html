@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+
+    <style>
+        div {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    Рабочие дни
+    <div id="workDays"></div>
+
+    Выходные дни
+    <div id="weekendDays"></div>
+
+    <script>
+        /*
+        Задание:
+        Используя параграфы, выведите все рабочие дни недели в div, который находится после фразы "Рабочие дни", 
+        выведите все выходные дни недели после фразы "Выходные дни".
+        */
+
+        let days = [
+            { name: "Sunday", isWorkDay: false },
+            { name: "Monday", isWorkDay: true },
+            { name: "Tuesday", isWorkDay: true },
+            { name: "Wednesday", isWorkDay: true },
+            { name: "Thursday", isWorkDay: true },
+            { name: "Friday", isWorkDay: true },
+            { name: "Saturday", isWorkDay: false }
+        ];
+
+       
+        let workDaysDiv = document.getElementById("workDays");
+        let weekendDaysDiv = document.getElementById("weekendDays");
+
+        for (let i = 0; i < days.length; i++) {
+            let paragraph = "<p>" + days[i].name + "</p>"; 
+            
+           
+            if (days[i].isWorkDay) {
+                workDaysDiv.innerHTML += paragraph;
+            }
+        
+            else {
+                weekendDaysDiv.innerHTML += paragraph;
+            }
+        }
+    </script>
+</body>
+
+</html>
